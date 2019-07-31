@@ -1,0 +1,44 @@
+  <!-- <h4>NOVO CURSO</h4>
+  <button style="float: left" mat-button mat-icon-button="btn-close">
+    <mat-icon>close</mat-icon>
+  </button> -->
+    <form [formGroup]="formulario" novalidate (ngSubmit)="salvar()">
+    <div class="example-container">
+      <div>
+        <button style="position: relative; left: 500px; color:#fff;background-color:#106eb0" (click)="fechar()" mat-button mat-icon-button="btn-close">
+            <mat-icon>close</mat-icon>
+          </button>
+      </div>
+        <mat-form-field>
+          <textarea  formControlName="titulo" matInput placeholder="Título"></textarea>
+          <span class="form-control-error" *ngIf="(titulo.dirty || titulo.touched) && titulo.invalid && titulo.errors.required">Título obrigatório</span>
+        </mat-form-field>
+      
+        <mat-form-field>
+          <textarea formControlName="url" matInput placeholder="URL"></textarea>
+          <span class="form-control-error" *ngIf="(url.dirty || url.touched) && url.invalid && url.errors.required">URL obrigatória</span>
+        </mat-form-field>
+      
+        <mat-form-field>
+            <mat-label>Canal</mat-label>
+            <mat-select formControlName="canal">
+              <mat-option *ngFor="let canal of canais" [value]="canal.value">
+                {{canal.nome}}
+              </mat-option>
+            </mat-select>
+          <span class="form-control-error" *ngIf="(canal.dirty || canal.touched) && canal.invalid && canal.errors.required">canal obrigatório</span>
+          </mat-form-field>
+    
+        <mat-form-field>
+            <mat-label>Data:</mat-label>
+            <input [textMask]="{mask: dataMask}" formControlName="datapublicacao" matInput placeholder="Choose a date">
+          <span class="form-control-error" *ngIf="(datapublicacao.dirty || datapublicacao.touched) && datapublicacao.invalid && datapublicacao.errors.required">data obrigatória</span>
+          </mat-form-field>
+    
+        <mat-form-field>
+            <textarea formControlName="cargahoraria" matInput placeholder="Carga Horária"></textarea>
+          <span class="form-control-error" *ngIf="(cargahoraria.dirty || cargahoraria.touched) && cargahoraria.invalid && cargahoraria.errors.required">Carga horária obrigatória</span>
+          </mat-form-field>
+      </div>
+          <button mat-raised-button color="primary" type="submit" [disabled]="!formulario.valid" class="mat-fab-bottom-right">Salvar</button>
+        </form>

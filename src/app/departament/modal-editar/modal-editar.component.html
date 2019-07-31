@@ -1,0 +1,37 @@
+<div>
+    <button style="position: relative; left: 500px; color:#fff;background-color:#106eb0" (click)="fechar()" mat-button mat-icon-button="btn-close">
+        <mat-icon>close</mat-icon>
+      </button>
+  </div>
+    <div style="margin-bottom:20px">
+        <mat-label>No. {{data.Id}}</mat-label>
+    </div>
+    <div class="example-container">
+        <mat-form-field>
+          <textarea matInput placeholder="Título" [(ngModel)]="data.Titulo"></textarea>
+        </mat-form-field>
+      
+        <mat-form-field>
+          <textarea matInput placeholder="URL" [(ngModel)]="data.URL"></textarea>
+        </mat-form-field>
+      
+        <input matInput placeholder="Canal">
+        <mat-form-field>
+            <mat-label>{{data.Canal}}</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let canal of canais" (click)="canalChange(canal.nome)" [value]="canal.value">
+                {{canal.nome}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+    
+          <mat-form-field>
+              <mat-label>Data:</mat-label>
+              <input [textMask]="{mask: dataMask}" [(ngModel)]="data.DataPublicacao" matInput placeholder="Choose a date">
+            </mat-form-field>
+    
+        <mat-form-field>
+            <textarea matInput placeholder="Carga Horária" [(ngModel)]="data.CargaHoraria"></textarea>
+          </mat-form-field>
+      </div>
+          <button mat-raised-button color="primary"  [disabled]="disable" class="mat-fab-bottom-right" (click)="salvar(canais)">Salvar</button>

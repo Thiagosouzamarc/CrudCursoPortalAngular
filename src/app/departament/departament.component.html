@@ -1,0 +1,138 @@
+<!-- <mat-card fxFlex>
+        <mat-card-title>
+            Departaments Form
+        </mat-card-title>
+    
+        <mat-card-content>
+            <div fxLayout="column" fxLayoutAlign="space-between">
+                <mat-form-field>
+                    <input matInput [(ngModel)]="depName">
+                    <mat-hint>The departament name</mat-hint>
+                </mat-form-field>
+                <div fxLayout="row" fxLayoutAlign="end end">
+                    <button mat-button color="primary" (click)="save()">Save</button>
+                    <button mat-button color="warn" (click)="cancel()">Cancel</button>
+                </div>
+            </div>
+    
+            <mat-list>
+                <h3 mat-subheader>Departaments</h3>
+                <mat-list-item *ngFor="let dep of departaments">
+                    <mat-icon mat-list-icon>folder</mat-icon>
+                    <h4 mat-line>{{dep.name}}</h4>
+                    <button mat-icon-button color="accent" (click)="delete(dep)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                    <button mat-icon-button color="primary" (click)="edit(dep)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+    </mat-card> -->
+
+    <div>
+        <button mat-icon-button color="primary" (click)="add()">
+            <mat-icon>add</mat-icon>novo curso
+        </button>
+    </div>
+    <div class="example-container mat-elevation-z8">
+        <table mat-table [dataSource]="dados">
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.Id}} </td>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="titulo">
+            <th mat-header-cell *matHeaderCellDef> Titulo </th>
+            <td mat-cell *matCellDef="let element"> {{element.Titulo}} </td>
+          </ng-container>
+      
+          <!-- Weight Column -->
+          <ng-container matColumnDef="URL">
+            <th mat-header-cell *matHeaderCellDef> URL </th>
+            <td mat-cell *matCellDef="let element"> {{element.URL}} </td>
+          </ng-container>
+      
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="canal">
+            <th mat-header-cell *matHeaderCellDef> Canal </th>
+            <td mat-cell *matCellDef="let element"> {{element.Canal}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="data">
+            <th mat-header-cell *matHeaderCellDef> Data </th>
+            <td mat-cell *matCellDef="let element"> {{element.DataPublicacao}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="carga">
+            <th mat-header-cell *matHeaderCellDef> Carga horária </th>
+            <td mat-cell *matCellDef="let element"> {{element.CargaHoraria}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="editar">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element"><button mat-icon-button color="primary" (click)="edit(element)">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="delete(element.Id)">
+                <mat-icon>delete</mat-icon>
+            </button></td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+
+    <!-- <div>
+        <button mat-icon-button color="primary" (click)="add(item)">
+            <mat-icon>add</mat-icon>novo curso
+        </button>
+    </div>
+    <table class="table table-striped table-six-itens" matSort>
+        <thead>
+            <tr>
+                <th scope="col" mat-sort-header="id">{{thHeadId}}</th>
+                <th scope="col" mat-sort-header="titulo">{{thHeadTitulo}}</th>
+                <th scope="col" mat-sort-header="url">{{thHeadURL}}</th>
+                <th scope="col" mat-sort-header="canal">{{thHeadCanal}}</th>
+                <th scope="col" mat-sort-header="data">{{thHeadData}}</th>
+                <th scope="col" mat-sort-header="horario">{{thHeadHorario}}</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of dados">
+                <td>
+                    <span mat-raised-button>{{item.Id}}</span>
+                </td>
+                <td>
+                    <span mat-raised-button>{{item.Titulo}}</span>
+                </td>
+                <td>
+                    <span mat-raised-button>{{item.URL | slice:0:60}}</span>
+                </td>
+                <td>
+                    <span mat-raised-button>{{item.Canal}}</span>
+                </td>
+                <td>
+                    <span mat-raised-button>{{item.DataPublicacao}}</span>
+                </td>
+                <td>
+                    <span mat-raised-button>{{item.CargaHoraria}}</span>
+                </td>
+                <td> -->
+                    <!-- <button mat-icon-button color="primary" (click)="edit(item)">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                </td> -->
+           
+            <!-- </tr>
+        </tbody>
+    </table>
+       -->
+      
